@@ -7,12 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
         .gradient-bg { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
         
         /* Hover Transitions */
         .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; border: 2px solid transparent; }
-        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); border-color: #0d9488; } /* Teal-600 */
+        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); border-color: #0d9488; }
         
         /* Scroll Animations */
         .animate-on-scroll { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
@@ -28,7 +28,7 @@
         .typing-text { 
             overflow: hidden; 
             white-space: nowrap; 
-            border-right: 3px solid #2dd4bf; /* Teal-400 */
+            border-right: 3px solid #2dd4bf;
             width: 0; 
             animation: typing 3s steps(50, end) forwards, blink 0.75s step-end infinite; 
         }
@@ -74,10 +74,12 @@
     </header>
 
     <section id="about" class="py-20 max-w-4xl mx-auto px-4 animate-on-scroll">
-        <h2 class="text-3xl font-bold mb-8 text-center relative inline-block left-1/2 -translate-x-1/2">
-            Professional Summary
-            <div class="absolute w-1/2 h-1 bg-teal-600 bottom--2 left-1/4 rounded mt-2"></div>
-        </h2>
+        <div class="flex justify-center mb-8">
+            <h2 class="text-3xl font-bold relative pb-3 inline-block">
+                Professional Summary
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-teal-600 rounded"></span>
+            </h2>
+        </div>
         <p class="text-lg text-slate-600 leading-relaxed text-center mt-4">
             Detail-oriented IT Support Technician with hands-on experience in hardware troubleshooting, system configuration, and network support. 
             Skilled in desktop support, incident resolution, and end-user assistance in IT environments with strong knowledge of TCP/IP, DNS, and DHCP.
@@ -86,10 +88,12 @@
 
     <section id="skills" class="py-20 bg-slate-100 border-y border-slate-200">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center relative inline-block left-1/2 -translate-x-1/2">
-                Technical Expertise
-                <div class="absolute w-1/2 h-1 bg-teal-600 bottom--2 left-1/4 rounded mt-2"></div>
-            </h2>
+            <div class="flex justify-center mb-12">
+                <h2 class="text-3xl font-bold relative pb-3 inline-block">
+                    Technical Expertise
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-teal-600 rounded"></span>
+                </h2>
+            </div>
             <div class="grid md:grid-cols-3 gap-8 mt-4">
                 <div class="bg-white p-8 rounded-2xl shadow-sm hover-lift animate-on-scroll delay-100">
                     <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6 transition-transform transform hover:rotate-12">
@@ -132,10 +136,12 @@
     </section>
 
     <section id="projects" class="py-20 max-w-5xl mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-12 text-center relative inline-block left-1/2 -translate-x-1/2 animate-on-scroll">
-            Projects & Hands-On Experience
-            <div class="absolute w-1/2 h-1 bg-teal-600 bottom--2 left-1/4 rounded mt-2"></div>
-        </h2>
+        <div class="flex justify-center mb-12 animate-on-scroll">
+            <h2 class="text-3xl font-bold relative pb-3 inline-block text-center">
+                Projects & Experience
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-teal-600 rounded"></span>
+            </h2>
+        </div>
         
         <div class="grid md:grid-cols-2 gap-6 mt-4">
             <div class="bg-white border border-slate-200 p-6 rounded-xl hover-lift animate-on-scroll delay-100">
@@ -162,10 +168,12 @@
 
     <section id="experience" class="py-20 bg-slate-100 border-t border-slate-200">
         <div class="max-w-4xl mx-auto px-4 animate-on-scroll">
-            <h2 class="text-3xl font-bold mb-12 text-center relative inline-block left-1/2 -translate-x-1/2">
-                Professional Experience
-                <div class="absolute w-1/2 h-1 bg-teal-600 bottom--2 left-1/4 rounded mt-2"></div>
-            </h2>
+            <div class="flex justify-center mb-12">
+                <h2 class="text-3xl font-bold relative pb-3 inline-block">
+                    Professional Experience
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-teal-600 rounded"></span>
+                </h2>
+            </div>
             <div class="border-l-4 border-teal-600 ml-4 pl-8 space-y-12 mt-4 relative">
                 <div class="relative bg-white p-6 rounded-xl shadow-sm hover-lift group">
                     <div class="absolute -left-[58px] top-4 w-6 h-6 bg-teal-600 rounded-full border-4 border-slate-100 group-hover:scale-125 transition-transform"></div>
@@ -184,10 +192,12 @@
 
     <section class="py-20 bg-slate-900 text-white">
         <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center relative inline-block left-1/2 -translate-x-1/2 animate-on-scroll">
-                Education
-                <div class="absolute w-1/2 h-1 bg-teal-500 bottom--2 left-1/4 rounded mt-2"></div>
-            </h2>
+            <div class="flex justify-center mb-12 animate-on-scroll">
+                <h2 class="text-3xl font-bold relative pb-3 inline-block">
+                    Education
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-teal-500 rounded"></span>
+                </h2>
+            </div>
             <div class="grid md:grid-cols-2 gap-8 mt-4">
                 <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-teal-500 transition-colors animate-on-scroll delay-100">
                     <div class="flex items-center gap-3 mb-2">
@@ -245,7 +255,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Only animate once
+                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
