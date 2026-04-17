@@ -34,17 +34,37 @@
         }
         @keyframes typing { from { width: 0 } to { width: 100% } }
         @keyframes blink { 50% { border-color: transparent } }
+
+        /* Infinite Scrolling Tech Ticker */
+        .ticker-wrap { width: 100%; overflow: hidden; background-color: #134e4a; border-top: 2px solid #0f766e; border-bottom: 2px solid #0f766e; }
+        .ticker { display: inline-flex; white-space: nowrap; animation: ticker-scroll 25s linear infinite; }
+        .ticker-item { padding: 12px 2rem; font-weight: 600; color: #ccfbf1; font-size: 0.9rem; letter-spacing: 1px; display: flex; items-center; gap: 8px; }
+        @keyframes ticker-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-slate-50 text-slate-900 relative">
 
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <span class="text-xl font-bold tracking-tighter text-teal-600 hover:text-teal-800 transition-colors cursor-pointer">NISHANT K</span>
+            <div class="flex items-center gap-4">
+                <span class="text-xl font-bold tracking-tighter text-teal-600 hover:text-teal-800 transition-colors cursor-pointer">NISHANT K</span>
+                <div class="hidden sm:flex items-center gap-2 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
+                    <span class="relative flex h-2.5 w-2.5">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                    </span>
+                    <span class="text-[10px] font-bold text-slate-500 tracking-wider">SYSTEM ONLINE</span>
+                </div>
+            </div>
+            
             <div class="space-x-6 hidden md:block text-sm font-medium">
                 <a href="#about" class="hover:text-teal-600 transition-colors">About</a>
                 <a href="#skills" class="hover:text-teal-600 transition-colors">Skills</a>
-                <a href="#projects" class="hover:text-teal-600 transition-colors">Projects</a>
+                <a href="#projects" class="hover:text-teal-600 transition-colors">IT Projects</a>
+                <a href="#web-dev" class="hover:text-teal-600 transition-colors">Web Dev</a>
                 <a href="#experience" class="hover:text-teal-600 transition-colors">Experience</a>
                 <a href="#contact" class="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors shadow-lg hover:shadow-teal-500/30">Contact</a>
             </div>
@@ -72,6 +92,27 @@
             </div>
         </div>
     </header>
+
+    <div class="ticker-wrap shadow-inner">
+        <div class="ticker">
+            <div class="ticker-item"><i class="fab fa-windows text-teal-300"></i> Windows Server OS</div>
+            <div class="ticker-item"><i class="fab fa-linux text-teal-300"></i> Linux Administration</div>
+            <div class="ticker-item"><i class="fas fa-network-wired text-teal-300"></i> TCP/IP & Subnetting</div>
+            <div class="ticker-item"><i class="fas fa-shield-alt text-teal-300"></i> Incident Resolution</div>
+            <div class="ticker-item"><i class="fas fa-code text-teal-300"></i> Python & HTML5</div>
+            <div class="ticker-item"><i class="fab fa-android text-teal-300"></i> Android Native Apps</div>
+            <div class="ticker-item"><i class="fas fa-robot text-teal-300"></i> Local LLM Development</div>
+            <div class="ticker-item"><i class="fas fa-database text-teal-300"></i> MySQL Operations</div>
+            <div class="ticker-item"><i class="fab fa-windows text-teal-300"></i> Windows Server OS</div>
+            <div class="ticker-item"><i class="fab fa-linux text-teal-300"></i> Linux Administration</div>
+            <div class="ticker-item"><i class="fas fa-network-wired text-teal-300"></i> TCP/IP & Subnetting</div>
+            <div class="ticker-item"><i class="fas fa-shield-alt text-teal-300"></i> Incident Resolution</div>
+            <div class="ticker-item"><i class="fas fa-code text-teal-300"></i> Python & HTML5</div>
+            <div class="ticker-item"><i class="fab fa-android text-teal-300"></i> Android Native Apps</div>
+            <div class="ticker-item"><i class="fas fa-robot text-teal-300"></i> Local LLM Development</div>
+            <div class="ticker-item"><i class="fas fa-database text-teal-300"></i> MySQL Operations</div>
+        </div>
+    </div>
 
     <section id="about" class="py-20 max-w-4xl mx-auto px-4 animate-on-scroll">
         <div class="flex justify-center mb-8">
@@ -138,30 +179,84 @@
     <section id="projects" class="py-20 max-w-5xl mx-auto px-4">
         <div class="flex justify-center mb-12 animate-on-scroll">
             <h2 class="text-3xl font-bold relative pb-3 inline-block text-center">
-                Projects & Experience
+                IT Infrastructure Projects
                 <span class="absolute bottom-0 left-0 w-full h-1 bg-teal-600 rounded"></span>
             </h2>
         </div>
         
         <div class="grid md:grid-cols-2 gap-6 mt-4">
-            <div class="bg-white border border-slate-200 p-6 rounded-xl hover-lift animate-on-scroll delay-100">
+            <div class="bg-white border border-slate-200 p-6 rounded-xl hover-lift animate-on-scroll delay-100 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-16 h-16 bg-teal-50 rounded-bl-full -z-10"></div>
                 <h4 class="text-lg font-bold text-slate-900 mb-2"><i class="fas fa-desktop text-teal-500 mr-2"></i> End-to-End System Setup</h4>
                 <p class="text-sm text-slate-600">Successfully completed full system deployments, including complex hardware assembly from scratch, dual-boot OS installation, and baseline system configuration.</p>
             </div>
             
-            <div class="bg-white border border-slate-200 p-6 rounded-xl hover-lift animate-on-scroll delay-200">
+            <div class="bg-white border border-slate-200 p-6 rounded-xl hover-lift animate-on-scroll delay-200 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-16 h-16 bg-teal-50 rounded-bl-full -z-10"></div>
                 <h4 class="text-lg font-bold text-slate-900 mb-2"><i class="fas fa-memory text-teal-500 mr-2"></i> Hardware Diagnostics</h4>
                 <p class="text-sm text-slate-600">Troubleshot and resolved critical hardware component issues involving RAM, HDD/SSD failures, SMPS voltage irregularities, and complex motherboard faults.</p>
             </div>
             
-            <div class="bg-white border border-slate-200 p-6 rounded-xl hover-lift animate-on-scroll delay-100">
+            <div class="bg-white border border-slate-200 p-6 rounded-xl hover-lift animate-on-scroll delay-100 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-16 h-16 bg-teal-50 rounded-bl-full -z-10"></div>
                 <h4 class="text-lg font-bold text-slate-900 mb-2"><i class="fas fa-ethernet text-teal-500 mr-2"></i> LAN Connectivity Deployment</h4>
                 <p class="text-sm text-slate-600">Designed and configured dynamic IP addressing structures and secured LAN connectivity, ensuring seamless data communication between multiple systems.</p>
             </div>
 
-            <div class="bg-white border border-slate-200 p-6 rounded-xl hover-lift animate-on-scroll delay-200">
+            <div class="bg-white border border-slate-200 p-6 rounded-xl hover-lift animate-on-scroll delay-200 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-16 h-16 bg-teal-50 rounded-bl-full -z-10"></div>
                 <h4 class="text-lg font-bold text-slate-900 mb-2"><i class="fas fa-shield-alt text-teal-500 mr-2"></i> Preventive Maintenance</h4>
                 <p class="text-sm text-slate-600">Utilized command-line tools (ping, ipconfig, tracert) for advanced network diagnostics while performing scheduled system updates to drastically reduce operational downtime.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="web-dev" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex justify-center mb-12 animate-on-scroll">
+                <h2 class="text-3xl font-bold relative pb-3 inline-block text-center">
+                    Web & App Development
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-teal-600 rounded"></span>
+                </h2>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm hover-lift animate-on-scroll flex flex-col md:flex-row gap-6 items-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center shrink-0">
+                        <i class="fas fa-robot text-blue-600 text-3xl"></i>
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                            <h4 class="text-xl font-bold text-slate-900">Native Android Local AI Chatbot</h4>
+                            <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full mt-2 md:mt-0">IN DEVELOPMENT</span>
+                        </div>
+                        <p class="text-slate-600 text-sm">Developing a self-contained AI chatbot that runs entirely natively on Android devices. Engineered to operate a local LLM without relying on external API keys using Kotlin and Android Studio.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover-lift animate-on-scroll delay-100">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-book-open text-purple-600 text-xl"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">LIVE</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">Manjin Maravile Prenayam</h4>
+                        <p class="text-sm text-slate-600">A dedicated web platform hosting an original Malayalam romantic horror novel, built with a custom UI tailored for immersive reading using HTML, CSS, and JS.</p>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover-lift animate-on-scroll delay-200">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-heart text-pink-500 text-xl"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-full border border-slate-200">PRIVATE</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">Reasons I Love You</h4>
+                        <p class="text-sm text-slate-600">A personalized, interactive creative website built to feature custom 3D animations, floating graphics, and an integrated audio player for a custom fusion song.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -238,6 +333,10 @@
             </div>
         </div>
     </section>
+
+    <a href="mailto:nishantkadavath149@gmail.com" class="fixed bottom-6 right-6 bg-teal-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:bg-teal-500 hover:scale-110 hover:shadow-teal-500/50 transition-all z-50 group">
+        <i class="fas fa-paper-plane text-xl group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform"></i>
+    </a>
 
     <footer class="py-8 border-t border-slate-200 text-center text-slate-500 text-sm bg-slate-50">
         &copy; 2026 Nishant K. Designed for performance and reliability.
